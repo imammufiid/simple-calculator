@@ -18,84 +18,60 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sumClicked(_ sender: Any) {
-        var firstNumb = 0
-        var secondNumb = 0
         if let fNumb = Int(firstNumber.text ?? "") {
-            firstNumb = fNumb
+            if let sNumb = Int(secondNumber.text ?? "") {
+                calculate(firstNumb: fNumb, secondNumb: sNumb, action: "+")
+            } else {
+                showToast(controller: self, message: "Wrong Input", second: 1)
+                return
+            }
         } else {
             showToast(controller: self, message: "Wrong Input", second: 1)
             return
         }
-        
-        if let sNumb = Int(secondNumber.text ?? "") {
-            secondNumb = sNumb
-        } else {
-            showToast(controller: self, message: "Wrong Input", second: 1)
-            return
-        }
-        
-        calculate(firstNumb: firstNumb, secondNumb: secondNumb, action: "+")
     }
     
     @IBAction func minusClicked(_ sender: Any) {
-        var firstNumb = 0
-        var secondNumb = 0
         if let fNumb = Int(firstNumber.text ?? "") {
-            firstNumb = fNumb
+            if let sNumb = Int(secondNumber.text ?? "") {
+                calculate(firstNumb: fNumb, secondNumb: sNumb, action: "-")
+            } else {
+                showToast(controller: self, message: "Wrong Input", second: 1)
+                return
+            }
         } else {
             showToast(controller: self, message: "Wrong Input", second: 1)
             return
         }
-        
-        if let sNumb = Int(secondNumber.text ?? "") {
-            secondNumb = sNumb
-        } else {
-            showToast(controller: self, message: "Wrong Input", second: 1)
-            return
-        }
-        
-        calculate(firstNumb: firstNumb, secondNumb: secondNumb, action: "-")
     }
     
     @IBAction func multiplyClicked(_ sender: Any) {
-        var firstNumb = 0
-        var secondNumb = 0
         if let fNumb = Int(firstNumber.text ?? "") {
-            firstNumb = fNumb
+            if let sNumb = Int(secondNumber.text ?? "") {
+                calculate(firstNumb: fNumb, secondNumb: sNumb, action: "*")
+            } else {
+                showToast(controller: self, message: "Wrong Input", second: 1)
+                return
+            }
         } else {
             showToast(controller: self, message: "Wrong Input", second: 1)
             return
         }
-        
-        if let sNumb = Int(secondNumber.text ?? "") {
-            secondNumb = sNumb
-        } else {
-            showToast(controller: self, message: "Wrong Input", second: 1)
-            return
-        }
-        
-        calculate(firstNumb: firstNumb, secondNumb: secondNumb, action: "*")
     }
     
     
     @IBAction func divideClicked(_ sender: Any) {
-        var firstNumb = 0
-        var secondNumb = 0
         if let fNumb = Int(firstNumber.text ?? "") {
-            firstNumb = fNumb
+            if let sNumb = Int(secondNumber.text ?? "") {
+                calculate(firstNumb: fNumb, secondNumb: sNumb, action: "/")
+            } else {
+                showToast(controller: self, message: "Wrong Input", second: 1)
+                return
+            }
         } else {
             showToast(controller: self, message: "Wrong Input", second: 1)
             return
         }
-        
-        if let sNumb = Int(secondNumber.text ?? "") {
-            secondNumb = sNumb
-        } else {
-            showToast(controller: self, message: "Wrong Input", second: 1)
-            return
-        }
-        
-        calculate(firstNumb: firstNumb, secondNumb: secondNumb, action: "/")
     }
     
     private func showToast(controller: UIViewController, message: String, second: Double) {
